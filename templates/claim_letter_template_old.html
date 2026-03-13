@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lettre de réclamation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 25px; }
+        .header { text-align: right; margin-bottom: 25px; }
+        .subject { font-weight: bold; margin-top: 5px; }
+        .content { margin-top: 5px; }
+        .signature { margin-top: 35px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>{{ company_name }}<br>
+        SIRET : {{ siret }}<br>
+        Code NAF : {{ naf }}</p>
+        <p>Le {{ date }}</p>
+    </div>
+
+    <p>Direction Générale des Finances Publiques<br>
+    Service des Impôts des Entreprises<br>
+    [Adresse du SIE]</p>
+
+    <p class="subject">Objet : Demande de remboursement de l'accise sur l'électricité au titre de l'année {{ year }}</p>
+
+    <div class="content">
+        <p>Madame, Monsieur,</p>
+
+        <p>La société {{ company_name }}, dont le siège social est situé [adresse], exerce une activité de [description] relevant du code NAF {{ naf }}.</p>
+
+        <p>Conformément aux dispositions des articles L312-36, L312-71 et L312-72 du Code des impositions sur les biens et services, ainsi que de l'article 92 de la loi n°2023-1322 du 29 décembre 2023 (pour 2024) / article 20 de la loi n°2025-127 du 14 février 2025 (pour 2025), notre entreprise remplit les conditions pour bénéficier du tarif réduit de l'accise sur l'électricité fixé à 0,5 €/MWh.</p>
+
+        <p>En effet :</p>
+        <ul>
+            <li>Notre activité relève de la section NACE 05-39 (code NAF {{ naf }}) ;</li>
+            <li>Notre ratio d'électro-intensité, calculé sur la base de notre valeur ajoutée de {{ value_added }} € et de nos coûts d'électricité de {{ electricity_cost }} €, s'élève à {{ ratio }} %, soit supérieur au seuil de 0,5 % ;</li>
+            <li>Plus de 50 % de notre consommation électrique est affectée à la production ({{ production_share }} %), comme justifié par les documents ci-joints.</li>
+        </ul>
+
+        <p>Nous avons acquitté l'accise au taux normal de 22,5 €/MWh sur l'ensemble de nos factures {{ year }}, soit une consommation de {{ consumption }} MWh et un montant total d'accise de {{ accise_paid }} €. L'application du taux réduit conduirait à une accise de {{ reduced_accise }} €. La différence de <strong>{{ refund_amount }} €</strong> nous est due.</p>
+
+        <p>Vous trouverez ci-joint :</p>
+        <ul>
+            <li>Le formulaire CERFA 2040-TIC-REMB-SD dûment rempli ;</li>
+            <li>Le formulaire 2040-TIC-VA-E-SD (détermination de la valeur ajoutée) ;</li>
+            <li>Un tableau récapitulatif des factures et du calcul ;</li>
+            <li>Les factures d'électricité de la période ;</li>
+            <li>Les liasses fiscales {{ year }} ;</li>
+            <li>Une attestation de répartition des consommations ;</li>
+            <li>Un relevé d'identité bancaire.</li>
+        </ul>
+
+        <p>Je vous remercie de bien vouloir procéder au remboursement de cette somme dans les meilleurs délais.</p>
+    </div>
+
+    <div class="signature">
+        <p>Le représentant légal,<br>
+        [Signature]</p>
+    </div>
+</body>
+</html>

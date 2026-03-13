@@ -1,0 +1,13 @@
+google-adk
+pdfplumber
+pytesseract
+pillow
+pandas
+openpyxl
+jinja2
+pdfrw
+weasyprint  # for HTML to PDF
+python-dotenv
+google-generativeai
+google-adk[extensions]
+streamlit
